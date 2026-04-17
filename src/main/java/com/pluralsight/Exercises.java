@@ -117,13 +117,13 @@ public class Exercises
         System.out.println();
         System.out.println("6) What does this loop do?");
         // in under 20 words describe the purpose of this loop (in your own words)
-        System.out.println("Loop will break after printing the number from the numbers array at index 1.");
+        System.out.println("Loop will break after printing the first odd number from the numbers array.");
 
         int[] numbers = {2, 4, 24, 13, 28, 4, 21 };
 
         for (int i = 0; i < numbers.length; i++)
         {
-            if(i % 2 == 1)
+            if(numbers[i] % 2 == 1) // revised the condition to check the elements in the numbers array
             {
                 System.out.println(numbers[i]);
                 break;
@@ -137,13 +137,13 @@ public class Exercises
         System.out.println();
         System.out.println("7) What does this loop do?");
         // in under 20 words describe the purpose of this loop (in your own words)
-        System.out.println("Loop only prints numbers from the number array at an odd position.");
+        System.out.println("Loop will only print odd numbers from the numbers array.");
 
         int[] numbers = {2, 4, 24, 13, 28, 4, 21 };
 
         for (int i = 0; i < numbers.length; i++)
         {
-            if(i % 2 == 0)
+            if(numbers[i] % 2 == 0) // // revised the condition to check the elements in the numbers array
             {
                 continue;
             }
@@ -161,7 +161,7 @@ public class Exercises
         System.out.println();
         System.out.println("8) This is an infinite loop, how can you fix it?");
 
-        System.out.println("the userInput variable isn't being used in the while loop to prompt the user for input.");
+        System.out.println("the userInput variable isn't being updated in the while loop.");
 
         Scanner userInput = new Scanner(System.in);
         String goAgain = "y";
@@ -171,7 +171,7 @@ public class Exercises
         {
             Thread.sleep(500);
             System.out.println("I'm still working");
-            System.out.print("Are you done? ");
+            System.out.print("Enter no once you've finished the job: ");
             goAgain = userInput.nextLine();
         }
 
@@ -187,6 +187,7 @@ public class Exercises
         for(int i = 1; i <= 50; i++) {
             System.out.print(i + " ");
         }
+        System.out.println();
 
     }
 
@@ -200,6 +201,7 @@ public class Exercises
         for(int i = 0; i <= 50; i+=2) {
             System.out.print(i + " ");
         }
+        System.out.println();
 
     }
 
@@ -213,6 +215,7 @@ public class Exercises
         for(int i = 5; i<= 50; i+=5) {
             System.out.print(i + " ");
         }
+        System.out.println();
 
     }
 
@@ -325,6 +328,38 @@ public class Exercises
             System.out.print("Enter your selection: ");
             selectedOption = Integer.parseInt(userInput.nextLine());
             System.out.println("You selected option " + selectedOption);
+            System.out.println();
+
+
+            // Metal list generated with assistance from ChatGPT (OpenAI)
+            String[] metals = {
+                // Alkali metals
+                "Lithium", "Sodium", "Potassium", "Rubidium", "Cesium", "Francium",
+
+                        // Alkaline earth metals
+                        "Beryllium", "Magnesium", "Calcium", "Strontium", "Barium", "Radium",
+
+                        // Transition metals
+                        "Scandium", "Titanium", "Vanadium", "Chromium", "Manganese", "Iron",
+                        "Cobalt", "Nickel", "Copper", "Zinc",
+                        "Yttrium", "Zirconium", "Niobium", "Molybdenum", "Technetium", "Ruthenium",
+                        "Rhodium", "Palladium", "Silver", "Cadmium",
+                        "Hafnium", "Tantalum", "Tungsten", "Rhenium", "Osmium", "Iridium",
+                        "Platinum", "Gold", "Mercury",
+
+                        // Post-transition metals
+                        "Aluminum", "Gallium", "Indium", "Tin", "Thallium", "Lead", "Bismuth", "Polonium",
+
+                        // Lanthanides
+                        "Lanthanum", "Cerium", "Praseodymium", "Neodymium", "Promethium",
+                        "Samarium", "Europium", "Gadolinium", "Terbium", "Dysprosium",
+                        "Holmium", "Erbium", "Thulium", "Ytterbium", "Lutetium",
+
+                        // Actinides
+                        "Actinium", "Thorium", "Protactinium", "Uranium", "Neptunium", "Plutonium",
+                        "Americium", "Curium", "Berkelium", "Californium", "Einsteinium",
+                        "Fermium", "Mendelevium", "Nobelium", "Lawrencium"
+            };
 
             switch(selectedOption)
             {
@@ -339,7 +374,7 @@ public class Exercises
                         System.out.print("\rPrinting all metals..." + i + "%");
                         Thread.sleep(50);
                     }
-                    System.out.println("\rMetals: 🪙⚙️🛠️🧲🔩\n");
+                    System.out.println("\rMetals: " + Arrays.toString(metals));
                     break;
                 case 4:
                     System.out.println("Goodbye! 👋🏾");
